@@ -76,8 +76,7 @@
           // ...
         })
           // ...
-        })
-        .catch((error) => {
+          .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           // ..
@@ -87,7 +86,9 @@
             title: 'Error', 
             text: ''+error,
           }));
-        });		  		  
+        });		
+        })
+          		  
       
       //----- End
     </script>
