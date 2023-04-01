@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRUD page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+	
+    <!-- Bootstrap theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script defer src=”./bundle.js”></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/334c45a40c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+
+     <!--Style Sheets-->
+     <!--====== Favicon Icon ======-->
+     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+     <!--====== Slick CSS ======-->
+     <link rel="stylesheet" href="assets/css/animate.css">
+ 
+     <!--====== LineIcons CSS ======-->
+     <link rel="stylesheet" href="assets/css/lineicons.css">
+ 
+     <!--====== Bootstrap CSS ======-->
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+ 
+     <!--====== Default CSS ======-->
+     <link rel="stylesheet" href="assets/css/default.css">
+ 
+     <!--====== Style CSS ======-->
+     <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="css/index.css">
+     <link rel="stylesheet" type="text/css" href="css/crud.css" />
+</head>
+<body>
+    
+    <!--====== HEADER PART START ======-->
+
+    <section class="header_area">
+        <div class="header_navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="webpage.html">
+                                <img src="assets/img/logo.png" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="webpage.html">Home<span></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="webpage.html#about">About<span></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#" id="logout">Logout<span></span></a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header navbar -->
+
+        <div id="home" class="header_hero">
+            <ul class="header_social d-none d-lg-block">
+                <li><a href="https://www.facebook.com/samuel.jinayon"><i class="lni lni-facebook-filled"></i></a></li>
+                <li><a href="https://twitter.com/SamGyupSaam"><i class="lni lni-twitter-filled"></i></a></li>
+                <li><a href="https://www.instagram.com/sampopots/"><i class="lni lni-instagram-filled"></i></a></li>
+            </ul>
+            <div class="container">
+                <div class="row align-items-center justify-content-center justify-content-lg-between">
+                    <div class="col-lg-6">
+                        <div class="header_hero_content mt-45">
+                            <h5 class="header_sub_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Hello!</h5>
+                            <h2 class="header_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Laboratory #3</h2>
+                            <span class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">To introduce students to Firestore and its features.</span>
+                        </div> <!-- header hero content -->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-7">
+                        <div class="header_hero_image mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="1.8s">
+                            <img src="assets/img/sam.png" alt="hero">
+                        </div> <!-- header hero image -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="header_hero_shape d-none d-lg-block"></div> <!-- header hero shape -->
+        </div> <!-- header hero -->
+    </section>
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== CRUD PART START ======-->
+
+    <section id="about" class="about_area pt-70 pb-120">
+        <div class="container mt-5">
+            <h1 class="main row justify-content-center">CRUD APPLICATION</h1>
+            <div class="col-12 mt-5">
+              <div class="row mb-3">
+                <div class="col-auto">
+                  <button id="add-btn" type="button" class="btn btn-success add-btn" data-bs-toggle="modal" data-bs-target="#add-modal">
+                    <i class="fa-solid fa-square-plus"></i> Add Data
+                  </button>
+                </div>
+              </div>
+              <table class="table table-striped" id="myTable">
+                <thead>
+                  <tr class="table-primary">
+                    <th scope="col">No.</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                  <tr>
+                    <!-- AUTOMATIC -->
+                  </tr>
+                </tbody>
+              </table>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="pagination">
+                  <!-- PAGINATION BUTTONS WILL BE ADDED HERE -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+          
+        <!-- Add Modal -->
+        <div id="add-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Add Data</h5>
+                <button type="button" id="close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                    <label for="FirstName" class="form-label" required>First Name:</label>
+                    <input type="text" class="form-control" id="FirstName" required>
+                    </div>
+                    <div class="mb-3">
+                    <label for="LastName" class="form-label" required>Last Name:</label>
+                    <input type="text" class="form-control" id="LastName" required>
+                    </div>
+                <div class="mb-3">
+                    <label for="Course" class="form-label" required>Course:</label>
+                    <input type="text" class="form-control" id="Course" required>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="add-button">Add</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div id="edit-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Edit User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="edit-close"></button>
+                </div>
+                <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                    <label for="Fname-input" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="Fname-input">
+                    </div>
+                    <div class="mb-3">
+                    <label for="Lname-input" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="Lname-input">
+                    </div>
+                    <div class="mb-3">
+                    <label for="Course-input" class="form-label">Course:</label>
+                    <input type="text" class="form-control" id="Course-input">
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit-close-button">Close</button>
+                    <button type="button" class="btn btn-primary" id="update-button">Save changes</button>
+                </div>
+            </div> 
+            </div>
+        </div>
+
+    </section>
+    <!--====== CRUD PART ENDS ======-->
+      
+</body>
+
+<!--SCRIPT FOR FIREBASE-->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, connectFirestoreEmulator, query,  getDocs, getDoc, updateDoc, setDoc, doc, onSnapshot, deleteDoc, orderBy } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js';
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzH36sNafvogZyXHMSTI6265BlUfDXYts",
+      authDomain: "jinayongettingstartedfirebase.firebaseapp.com",
+      databaseURL: "https://jinayongettingstartedfirebase-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "jinayongettingstartedfirebase",
+      storageBucket: "jinayongettingstartedfirebase.appspot.com",
+      messagingSenderId: "994784538018",
+      appId: "1:994784538018:web:fa9df6ea610c6006e896fb",
+      measurementId: "G-T1PMCS7M5K"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+
+    // Firestore
+    const db = getFirestore(app);
+
+    //----- Logout code start	  
+	  document.getElementById("logout").addEventListener("click", function() {
+		  signOut(auth).then(() => {
+			  // Sign-out successful.
+			  console.log('Sign-out successful.');
+			  (Swal.fire({
+                    icon: 'success', 
+                    title: 'Logged Out Successfully', 
+                    text: 'You will be Redirected Shortly',
+                }));
+
+                setTimeout(function(){
+                    window.location.href = "index.html";
+                }, 2000);
+                // ...
+
+			}).catch((error) => {
+			  // An error happened.
+			  console.log('An error happened.');
+			});		  		  
+	  });
+	  //----- End
+
+      // <----- ADD MODAL -----> 
+
+    // Get the add modal element from the DOM
+    const addModal = document.getElementById("add-modal");
+
+    // Get the input fields and buttons from the add modal
+    const addFnameInput = addModal.querySelector("#FirstName");
+    const addLnameInput = addModal.querySelector("#LastName");
+    const addCourseInput = addModal.querySelector("#Course");
+    const addButton = addModal.querySelector("#add-button");
+    const cancelButton = addModal.querySelector("#cancel-button");
+
+    // Add event listener to the add button
+    addButton.addEventListener("click", () => {
+    const FirstName = addFnameInput.value.trim();
+    const LastName = addLnameInput.value.trim();
+    const Course = addCourseInput.value.trim();
+    
+    // Check if any of the input fields are blank
+    if (!FirstName || !LastName || !Course) {
+        Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Fill Out All The Fields"
+        });
+        return;
+    }
+
+    // Add the data to Firestore
+    addDoc(collection(db, "Course"), {
+        FirstName: FirstName,
+        LastName: LastName,
+        Course: Course
+    })
+        .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+
+    // Reset the input fields
+    addFnameInput.value = "";
+    addLnameInput.value = "";
+    addCourseInput.value = "";
+
+    function hideAddModal() {
+        const addModal = new bootstrap.Modal(document.querySelector("add-modal"));
+        const modalBackdrop = document.querySelector('.modal-backdrop');
+
+        // Hide the modal
+        addModal.hide();
+
+        // Remove the backdrop
+        modalBackdrop.parentNode.removeChild(modalBackdrop);
+    }
+
+    // Show a success message
+    Swal.fire({
+        icon: "success",
+        title: "Data Added Successfully",
+    });
+    });
+
+    // Add event listener to the add modal to reset the input fields
+    addModal.addEventListener("hidden.bs.modal", () => {
+    addFnameInput.value = "";
+    addLnameInput.value = "";
+    addCourseInput.value = "";
+    });
+
+    // <----- TABLE PART EDIT AND DELETE BUTTON ----->
+
+    // Get the table element from the DOM
+    const table = document.getElementById("myTable");
+
+    // Get the tbody element from the DOM
+    const tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+
+    // <----- EDIT PART ----->
+
+    // Success Update
+    function displaySuccessAlert() {
+    Swal.fire('Success', 'Record updated successfully!', 'success');
+    }
+
+    // Create a query for the users collection
+    const usersRef = collection(db, "Course");
+
+    // Query the collection in descending order
+    const queryDesc = query(usersRef, orderBy("FirstName", "asc"));
+
+    // Listen for new data in real-time
+    onSnapshot(queryDesc, (querySnapshot) => {
+    // Clear existing data from the table
+    tbody.innerHTML = "";
+
+    // Add new data to the table
+    let index = 0;
+    querySnapshot.forEach((queryDoc) => {
+        index++;
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${index}</td>
+        <td>${queryDoc.data().FirstName}</td>
+        <td>${queryDoc.data().LastName}</td>
+        <td>${queryDoc.data().Course}</td>
+        <td>
+            <button type="button" class="btn btn-warning btn-sm edit" data-id="${queryDoc.id}-edit" data-firstname="${queryDoc.data().FirstName}" data-lastname="${queryDoc.data().LastName}" data-Course="${queryDoc.data().Course}">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm delete" data-id="${queryDoc.id}-delete">Delete</button>
+        </td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    // Add a click event listener to the delete button to delete the document from Firestore
+    const deleteButtons = document.querySelectorAll('.delete');
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+        const documentId = button.getAttribute('data-id').split('-')[0];
+        deleteDocument(documentId);
+        });
+    });
+
+    // Add a click event listener to the edit button to open the edit modal and fill it with the current data
+    const editButtons = document.querySelectorAll('.edit');
+    editButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+        const documentId = button.getAttribute('data-id').split('-')[0];
+        const firstName = button.getAttribute('data-firstname');
+        const lastName = button.getAttribute('data-lastname');
+        const Course = button.getAttribute('data-Course');
+
+        // Fill the input fields with the current data
+        document.getElementById('Fname-input').value = firstName;
+        document.getElementById('Lname-input').value = lastName;
+        document.getElementById('Course-input').value = Course;
+
+        // Set the current document id
+        document.getElementById('update-button').setAttribute('data-id', documentId);
+
+        // Open the edit modal
+        const modal = document.getElementById('edit-modal');
+        modal.classList.add('show');
+        modal.style.display = 'block';
+
+        const editCloseButton = document.getElementById('edit-close');
+        const editCloseButton2 = document.getElementById('edit-close-button');
+        const backdrop = document.createElement('div');
+        backdrop.classList.add('modal-backdrop', 'fade', 'show');
+        document.body.appendChild(backdrop);
+
+        editCloseButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+            backdrop.remove();
+        });
+
+        editCloseButton2.addEventListener('click', () => {
+            modal.style.display = 'none';
+            backdrop.remove();
+        });
+        });
+    });
+
+    // Add a click event listener to the update button to update the document in Firestore with the new data
+    document.getElementById('update-button').addEventListener('click', async () => {
+        try {
+        const firstName = document.getElementById('Fname-input').value;
+        const lastName = document.getElementById('Lname-input').value;
+        const Course = document.getElementById('Course-input').value;
+        const documentId = document.getElementById('update-button').getAttribute('data-id');
+
+    // Catch Error  
+    // Check if any of the input fields are blank
+    if (!firstName || !lastName || !Course) {
+        Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Fill Out All The Fields"
+        });
+        return;
+    }
+
+        console.log('Update button clicked');
+        await updateDoc(doc(db, "Course", documentId), {
+        FirstName: firstName,
+        LastName: lastName,
+        Course: Course
+        });
+
+        // Hide The Modal After Update
+        const modal = document.getElementById('edit-modal');
+        modal.style.display = 'none';
+        const backdrop = document.querySelector('.modal-backdrop');
+        backdrop.remove();
+
+        // Display success alert
+        displaySuccessAlert();
+
+        } catch (error) {
+        console.error(error);
+        }
+        });
+        
+    });
+
+
+    // <----- DELETE FUNCTION ----->
+
+    // Function to delete a document from Firestore
+    const deleteDocument = async (documentId) => {
+    const result = await Swal.fire({
+        title: "Are you sure you want to delete this document?",
+        text: "This action cannot be undone.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#dc3545",
+        confirmButtonText: "Yes, delete it",
+        cancelButtonText: "Cancel",
+    });
+
+    if (result.isConfirmed) {
+        try {
+        await deleteDoc(doc(db, "Course", documentId));
+        Swal.fire({
+            title: "Deleted!",
+            text: "The document has been deleted.",
+            icon: "success",
+        });
+        } catch (error) {
+        console.error("Error deleting document: ", error);
+        Swal.fire({
+            title: "Error",
+            text: "There was an error deleting the document.",
+            icon: "error",
+        });
+        }
+    }
+    };
+  </script>
+
+</html>
